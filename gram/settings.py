@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1tm0(b#3(f9#r2iqb4&3rmlaf@c&4+06menfo*7#uw7sikjt_8'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -157,8 +157,8 @@ TAGGIT_CASE_INSENSITIVE = True
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp-relay.sendinblue.com'
-EMAIL_HOST_USER = 'alexa.kobrynets@gmail.com'
-EMAIL_HOST_PASSWORD = 'FA9aG2mn4kLxSMPZ'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 
 
@@ -175,8 +175,8 @@ LIKE_CHOICES = (
 )
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dbfla1dv0',
-    'API_KEY': '316984694718453',
-    'API_SECRET': 'BN3yP1i5G1zNIfc7yhVCMB1WgYE',
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('API_KEY'),
+    'API_SECRET': os.getenv('API_SECRET'),
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
