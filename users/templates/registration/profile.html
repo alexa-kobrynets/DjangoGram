@@ -1,6 +1,5 @@
 {% extends 'base.html' %}  
 {% load static %}
-{% load thumbnail %}
 {% block content %}
 <h1>@{{ user_page.username }}</h1>
 
@@ -51,7 +50,7 @@
             <div class="carousel-inner">
               {% for image in post.image_set.all %}
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ image.image|thumbnail_url:'post' }}" alt="...">
+                <img class="d-block w-100" src="{{ image.image.url }}" alt="...">
                 </div>
               {% endfor %}
             </div>

@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'core',
     'users',
     'taggit',
-    'easy_thumbnails',
     'cloudinary_storage',
     'cloudinary',
 ]
@@ -161,13 +160,6 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 
-
-THUMBNAIL_ALIASES = {
-    '': {
-        'avatar': {'size': (200, 200), 'crop': True},
-        'post': {'size': (500, 500), 'crop': True},
-    },
-}
 
 LIKE_CHOICES = (
     ('Like', 'Like'),
